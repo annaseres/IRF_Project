@@ -25,5 +25,22 @@ namespace NVB5UL_project
 
             
         }
+
+        private void adatokBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            adatokBindingSource.EndEdit();
+
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+            adatokDataGridView.Refresh();
+        }
     }
 }

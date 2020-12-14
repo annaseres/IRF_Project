@@ -185,11 +185,11 @@
             // adatokBindingNavigatorSaveItem
             // 
             this.adatokBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.adatokBindingNavigatorSaveItem.Enabled = false;
             this.adatokBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("adatokBindingNavigatorSaveItem.Image")));
             this.adatokBindingNavigatorSaveItem.Name = "adatokBindingNavigatorSaveItem";
             this.adatokBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.adatokBindingNavigatorSaveItem.Text = "Save Data";
+            this.adatokBindingNavigatorSaveItem.Click += new System.EventHandler(this.adatokBindingNavigatorSaveItem_Click);
             // 
             // adatokDataGridView
             // 
