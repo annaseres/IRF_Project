@@ -35,7 +35,7 @@ namespace NVB5UL_project
         private void FillDataSource()
         {
             listBox1.DataSource = (from i in context.Adatoks
-                                   where i.Futar_ID.ToString().StartsWith(textBox1.Text)
+                                   where i.Futar_ID.ToString().Contains(textBox1.Text)
                                    select i).ToList();
         }
 
@@ -67,7 +67,7 @@ namespace NVB5UL_project
 
             var futarok = from x in context.Adatoks where x.Futar_ID == Futar_ID select x;
 
-            listBox2.DisplayMember = "Futar_ID";
+            listBox2.DisplayMember = "Csomag_ID";
 
             listBox2.DataSource = futarok.ToList();
 
@@ -78,7 +78,16 @@ namespace NVB5UL_project
             var Csomag_ID = ((Adatok)listBox2.SelectedItem).Csomag_ID;
             var csomagok = from y in context.Adatoks
                            where y.Csomag_ID == Csomag_ID
-                           select y;
+                           select new
+                           {
+                               Név=y.UgyfelNev,
+                               Cím=y.Utca+" "+y.Hazszam+".",
+                               Emelet=y.Emelet,
+                               Csengő=y.Csengo,
+                               Összeg=y.Osszeg,
+                               Fizetés=y.FizMod,
+                               Kifizetve=y.Fizetve,
+                           };
             dataGridView1.DataSource = csomagok.ToList();
             
 
@@ -106,21 +115,21 @@ namespace NVB5UL_project
             {
                 foreach (var p in kiir)
                 {
-                    sw.Write(p.Csomag_ID);
+                    sw.Write(p.Csomag_ID.ToString());
                     sw.Write(";");
                     sw.Write(p.UgyfelNev);
                     sw.Write(";");
                     sw.Write(p.Utca);
                     sw.Write(";");
-                    sw.Write(p.Hazszam);
+                    sw.Write(p.Hazszam.ToString());
                     sw.Write(";");
-                    sw.Write(p.Emelet);
+                    sw.Write(p.Emelet.ToString());
                     sw.Write(";");
-                    sw.Write(p.Csengo);
+                    sw.Write(p.Csengo.ToString());
                     sw.Write(";");
                     sw.Write(p.FizMod);
                     sw.Write(";");
-                    sw.Write(p.Fizetve);
+                    sw.Write(p.Fizetve.ToString());
                     sw.WriteLine();
                 }
             }
