@@ -94,9 +94,35 @@ namespace NVB5UL_project
 
             if (sfd.ShowDialog() != DialogResult.OK) return;
 
+            List<Adatok> kiir;
+
+            var ir = from l in context.Adatoks
+                     where l.Futar_ID.ToString().Contains(listBox1.SelectedItem.ToString())
+                     select l;
+
+            kiir = ir.ToList();
+
             using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
             {
-                
+                foreach (var p in kiir)
+                {
+                    sw.Write(p.Csomag_ID);
+                    sw.Write(";");
+                    sw.Write(p.UgyfelNev);
+                    sw.Write(";");
+                    sw.Write(p.Utca);
+                    sw.Write(";");
+                    sw.Write(p.Hazszam);
+                    sw.Write(";");
+                    sw.Write(p.Emelet);
+                    sw.Write(";");
+                    sw.Write(p.Csengo);
+                    sw.Write(";");
+                    sw.Write(p.FizMod);
+                    sw.Write(";");
+                    sw.Write(p.Fizetve);
+                    sw.WriteLine();
+                }
             }
            
         }
