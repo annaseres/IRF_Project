@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace NVB5UL_project
         {
             InitializeComponent();
 
+            FillDataSource();
+
             context.Adatoks.Load();
 
             adatokBindingSource.DataSource = context.Adatoks.Local;
@@ -26,6 +29,7 @@ namespace NVB5UL_project
             label1.Text = "\uE721";
 
             listBox1.DisplayMember = "Futar_ID";
+
         }
 
         private void FillDataSource()
@@ -50,6 +54,49 @@ namespace NVB5UL_project
             }
 
             adatokDataGridView.Refresh();
+        }
+
+        public void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            FillDataSource();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var Futar_ID = ((Adatok)listBox1.SelectedItem).Futar_ID;
+
+            var futarok = from x in context.Adatoks where x.Futar_ID == Futar_ID select x;
+
+            listBox2.DisplayMember = "Futar_ID";
+
+            listBox2.DataSource = futarok.ToList();
+
+        }
+
+        public void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var Csomag_ID = ((Adatok)listBox2.SelectedItem).Csomag_ID;
+            var csomagok = from y in context.Adatoks
+                           where y.Csomag_ID == Csomag_ID
+                           select y;
+            dataGridView1.DataSource = csomagok.ToList();
+            
+
+        }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+
+            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8)) ;
+
+           
         }
     }
 }

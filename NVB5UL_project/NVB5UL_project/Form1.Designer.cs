@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.adatokBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.adatokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -44,15 +45,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.adatokBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.adatokDataGridView = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,12 +56,22 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.adatokBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.adatokBindingNavigator)).BeginInit();
             this.adatokBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adatokBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adatokDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adatokBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // adatokBindingNavigator
@@ -98,7 +100,7 @@
             this.adatokBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.adatokBindingNavigator.Name = "adatokBindingNavigator";
             this.adatokBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.adatokBindingNavigator.Size = new System.Drawing.Size(1131, 25);
+            this.adatokBindingNavigator.Size = new System.Drawing.Size(1024, 25);
             this.adatokBindingNavigator.TabIndex = 0;
             this.adatokBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -110,6 +112,10 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // adatokBindingSource
+            // 
+            this.adatokBindingSource.DataSource = typeof(NVB5UL_project.Adatok);
             // 
             // bindingNavigatorCountItem
             // 
@@ -216,85 +222,8 @@
             this.adatokDataGridView.DataSource = this.adatokBindingSource;
             this.adatokDataGridView.Location = new System.Drawing.Point(0, 40);
             this.adatokDataGridView.Name = "adatokDataGridView";
-            this.adatokDataGridView.Size = new System.Drawing.Size(1137, 168);
+            this.adatokDataGridView.Size = new System.Drawing.Size(997, 197);
             this.adatokDataGridView.TabIndex = 1;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 323);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(148, 264);
-            this.listBox1.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 271);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 243);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(251, 323);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(142, 264);
-            this.listBox2.TabIndex = 5;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(544, 323);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(423, 264);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 231);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Szűrés:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 307);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Futárok:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(257, 307);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Csomagok:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(541, 307);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Szállítási adatok:";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -362,15 +291,112 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Fizetve";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // adatokBindingSource
+            // listBox1
             // 
-            this.adatokBindingSource.DataSource = typeof(NVB5UL_project.Adatok);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 323);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(148, 264);
+            this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 271);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(218, 270);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(222, 323);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(142, 264);
+            this.listBox2.TabIndex = 5;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(419, 323);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(423, 264);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 255);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Szűrés:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 307);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Futárok:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(219, 307);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Csomagok:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(416, 307);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Szállítási adatok:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(868, 419);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 46);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Mentés fájlba";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(868, 493);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 46);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Törlés";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 646);
+            this.ClientSize = new System.Drawing.Size(1024, 590);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -387,9 +413,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.adatokBindingNavigator)).EndInit();
             this.adatokBindingNavigator.ResumeLayout(false);
             this.adatokBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adatokBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adatokDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adatokBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,6 +458,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
