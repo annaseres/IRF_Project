@@ -22,6 +22,8 @@ namespace NVB5UL_project
 
             FillDataSource();
 
+            CreateLabel();
+
             context.Adatoks.Load();
 
             adatokBindingSource.DataSource = context.Adatoks.Local;
@@ -29,6 +31,8 @@ namespace NVB5UL_project
             label1.Text = "\uE721";
 
             listBox1.DisplayMember = "Futar_ID";
+
+            
 
         }
 
@@ -156,6 +160,22 @@ namespace NVB5UL_project
 
             context.SaveChanges();
 
+        }
+
+        private void CreateLabel()
+        {
+            int lineWidth = 5;
+
+            for (int row = 0; row < 2; row++)
+            {
+                for (int col = 0; col < 38; col++)
+                {
+                    Szines sz = new Szines();
+                    sz.Left = col * sz.Width + lineWidth;
+                    sz.Top =20+row * sz.Height + lineWidth;
+                    Controls.Add(sz);
+                }
+            }
         }
     }
 }
