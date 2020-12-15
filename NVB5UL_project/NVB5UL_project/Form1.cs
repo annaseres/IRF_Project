@@ -23,7 +23,16 @@ namespace NVB5UL_project
 
             adatokBindingSource.DataSource = context.Adatoks.Local;
 
-            
+            label1.Text = "\uE721";
+
+            listBox1.DisplayMember = "Futar_ID";
+        }
+
+        private void FillDataSource()
+        {
+            listBox1.DataSource = (from i in context.Adatoks
+                                   where i.Futar_ID.ToString().StartsWith(textBox1.Text)
+                                   select i).ToList();
         }
 
         private void adatokBindingNavigatorSaveItem_Click(object sender, EventArgs e)
