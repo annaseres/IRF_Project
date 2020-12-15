@@ -30,6 +30,10 @@ namespace NVB5UL_project
 
             label1.Text = "\uE721";
 
+            button1.Text = "\uE792";
+
+            button2.Text = "\uE74D";
+
             listBox1.DisplayMember = "Futar_ID";
 
             
@@ -176,6 +180,26 @@ namespace NVB5UL_project
                     Controls.Add(sz);
                 }
             }
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.Text = "Mentés fájlba";
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.Text = "\uE792";
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.Text = "Törlés";
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.Text = "\uE74D";
         }
     }
 }
