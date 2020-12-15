@@ -61,7 +61,7 @@ namespace NVB5UL_project
             FillDataSource();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var Futar_ID = ((Adatok)listBox1.SelectedItem).Futar_ID;
 
@@ -94,9 +94,33 @@ namespace NVB5UL_project
 
             if (sfd.ShowDialog() != DialogResult.OK) return;
 
-            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8)) ;
-
+            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+            {
+                
+            }
            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var tor = ((Adatok)listBox2.SelectedItem).Csomag_ID;
+
+            List<Adatok> adatok;
+
+            adatok = (from v in context.Adatoks
+                      where v.Csomag_ID == tor
+                      select v).ToList();
+
+            foreach (var item in context.Adatoks)
+            {
+                if (adatok.Contains(item))
+                {
+                    context.Adatoks.Remove(item);
+                }
+            }
+
+            context.SaveChanges();
+
         }
     }
 }
