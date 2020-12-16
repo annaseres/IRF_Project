@@ -125,6 +125,10 @@ namespace NVB5UL_project
                 {
                     sw.Write(p.Csomag_ID.ToString());
                     sw.Write(";");
+                    sw.Write(p.Futar_ID.ToString());
+                    sw.Write(";");
+                    sw.Write(p.Ugyfel_ID.ToString());
+                    sw.Write(";");
                     sw.Write(p.UgyfelNev);
                     sw.Write(";");
                     sw.Write(p.Utca);
@@ -134,6 +138,8 @@ namespace NVB5UL_project
                     sw.Write(p.Emelet.ToString());
                     sw.Write(";");
                     sw.Write(p.Csengo.ToString());
+                    sw.Write(";");
+                    sw.Write(p.Osszeg.ToString());
                     sw.Write(";");
                     sw.Write(p.FizMod);
                     sw.Write(";");
@@ -146,12 +152,12 @@ namespace NVB5UL_project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var tor = ((Adatok)listBox2.SelectedItem).Csomag_ID;
+            string tor = ((Adatok)listBox2.SelectedItem).Csomag_ID.ToString();
 
             List<Adatok> adatok;
 
             adatok = (from v in context.Adatoks
-                      where v.Csomag_ID == tor
+                      where v.Csomag_ID.ToString() == tor
                       select v).ToList();
 
             foreach (var item in context.Adatoks)
@@ -181,6 +187,7 @@ namespace NVB5UL_project
                 }
             }
         }
+
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
